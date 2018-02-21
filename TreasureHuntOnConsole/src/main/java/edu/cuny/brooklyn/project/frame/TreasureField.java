@@ -44,7 +44,7 @@ public class TreasureField {
 
 
 
-	public char getChar(int x, int y) {
+	public char getCharAt(int x, int y) {
 		return field[y][x];
 	}
 	

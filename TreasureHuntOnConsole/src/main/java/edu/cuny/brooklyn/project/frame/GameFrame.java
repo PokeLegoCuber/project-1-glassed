@@ -55,13 +55,6 @@ public class GameFrame {
 		return treasureField;
 	}
 
-	public void update(boolean showTreasure) {
-		if (showTreasure) {
-
-		}
-	}
-	
-
 	public void updateDisplayIoWindow() {
 		for (int i=0; i<ioWindow.getHeight(); i++) {
 			int y = yPosIoWindow + i;
@@ -78,7 +71,7 @@ public class GameFrame {
 			int y = yPosTreasureField + i;
 			for (int j=0; j<treasureField.getFieldWidth(); j++) {
 				int x = xPosTreasureField + j;
-				displayBuffer[y][x] = treasureField.getChar(j, i);
+				displayBuffer[y][x] = treasureField.getCharAt(j, i);
 			}
 		}
 	}
@@ -119,10 +112,6 @@ public class GameFrame {
 
 	private void fillDisplayBuffer(boolean showTreasure) {
 		blankDisplayBuffer();
-
-		if (showTreasure) {
-			// fillTreasure();
-		}
 
 		fillAllBorders();
 	}
