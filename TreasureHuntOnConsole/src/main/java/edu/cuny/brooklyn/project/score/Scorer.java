@@ -22,7 +22,7 @@ public class Scorer {
 	}
 
 	public void updateScore(int attempts) {
-		roundScore =  GameSettings.MAX_SCORE - (attempts - 1) * GameSettings.SCORE_PENALTY+treasure.getTotalValue();//i added  the value of the treasure towards the players score
+		roundScore =  GameSettings.MAX_SCORE - (attempts - 1) * GameSettings.SCORE_PENALTY+treasures.getTotalValue();//i added  the value of the treasure towards the players score
 		System.out.println("this rounds score is "+ roundScore);// print rounds score
 		totalScore += roundScore;
 		System.out.println("your score for this game is  "+ totalScore);// print total score
