@@ -26,6 +26,9 @@ public class GameController {
 	public void runTheGame() {
 		boolean toExit = true;
 		
+		gameFrame.getScoreWindow().paintScore(scorer.getRoundScore(), scorer.getTotalScore());
+		gameFrame.updateDisplayScoreWindow();
+		
 		do {
 			gameFrame.getTreasureField().placeTreasure();
 			int attempts = solvePuzzler();
@@ -37,6 +40,8 @@ public class GameController {
 			attempts = locateTreasure(clue);
 			
 			scorer.updateScore(attempts);
+			gameFrame.getScoreWindow().paintScore(scorer.getRoundScore(), scorer.getTotalScore());
+			gameFrame.updateDisplayScoreWindow();
 			LOGGER.debug("RoundScore = " + scorer.getRoundScore() + " TotalScore = " + scorer.getTotalScore());
 			
 			toExit = delcareEndOfRun();
@@ -50,6 +55,7 @@ public class GameController {
 		do {
 			gameFrame.getIoWindow().paintPuzzler(puzzler.getMessage());
 			gameFrame.updateDisplayIoWindow();
+			
 			gameFrame.display();
 			answer = gameFrame.getIoWindow().answerPuzzler();
 			attempts ++;

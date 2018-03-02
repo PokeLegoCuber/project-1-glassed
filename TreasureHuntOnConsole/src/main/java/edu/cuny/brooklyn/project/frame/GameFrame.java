@@ -50,11 +50,25 @@ public class GameFrame {
 	public GameIOWindow getIoWindow() {
 		return ioWindow;
 	}
+	
+	public ScoreWindow getScoreWindow() {
+		return scoreWindow;
+	}
 
 	public TreasureField getTreasureField() {
 		return treasureField;
 	}
 
+	public void updateDisplayScoreWindow() {
+		for (int i=0; i<scoreWindow.getHeight(); i++) {
+			int y = yPosScoreWindow + i;
+			for (int j=0; j<scoreWindow.getWidth(); j++) {
+				int x = xPosScoreWindow + j;
+				displayBuffer[y][x] = scoreWindow.getCharAt(i, j);
+			}
+		}
+	}
+	
 	public void updateDisplayIoWindow() {
 		for (int i=0; i<ioWindow.getHeight(); i++) {
 			int y = yPosIoWindow + i;
