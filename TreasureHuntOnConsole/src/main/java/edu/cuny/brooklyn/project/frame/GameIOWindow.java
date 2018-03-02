@@ -29,9 +29,14 @@ public class GameIOWindow {
 
 	public String answerPuzzler() {
 		String answer = "";
+		//Input Validation - validated for -ve numbers could have try catch for strings
 		do {
 			answer = scanner.nextLine();
-		} while (answer.isEmpty());
+			if(Double.parseDouble(answer)<0)
+				System.out.println("Re-enter number:");
+				
+			
+		} while (answer.isEmpty()||(Double.parseDouble(answer)<0));
 		LOGGER.debug("User entered " + answer);
 		return answer;
 	}
@@ -86,10 +91,8 @@ public class GameIOWindow {
 			window[yPos][xPos+i] = "Congraulations. You found the treasure".charAt(i);
 		}
 		yPos ++;
-		for (int i=0; i<"Do you wish to play next round? (y/n):".length(); i++) {
-			window[yPos][xPos+i] = "Do you wish to play next round? (y/n):".charAt(i);
-		}
-	}
+		
+	} 
 
 	public void paintPuzzler(String msg) {
 		clear();
