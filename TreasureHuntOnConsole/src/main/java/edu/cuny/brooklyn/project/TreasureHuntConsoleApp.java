@@ -7,9 +7,17 @@
  */
 
 package edu.cuny.brooklyn.project;
+
 import java.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Option;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
 
 import edu.cuny.brooklyn.project.controller.GameController;
 
@@ -18,7 +26,7 @@ public class TreasureHuntConsoleApp {
 	
 	public static void main(String[] args) 
 	{
-		
+		argparse(args);
 		Scanner input= new Scanner(System.in);
 		boolean continueplay=true;
 		//Game Round & Input Validation - ACK added validated continue playing loop
@@ -45,5 +53,63 @@ public class TreasureHuntConsoleApp {
 		}
 		input.close();
 		LOGGER.info("TreasureHuntConsoleApp exits.");
+	}
+	
+	public static void argparse(String[] args)
+	{
+		CommandLineParser parser = new DefaultParser();
+
+		Options options = new Options();
+
+		options.addOption("h", "help", false, "print this message");
+		options.addOption(
+				Option.
+				builder("x").
+				longOpt("window-width").
+				desc("screen width for the game").
+				hasArg().
+				argName("WIDTH").
+				build());
+		options.addOption(
+				Option.
+				builder("y").
+				longOpt("window-height").
+				desc("screen height for the game").
+				hasArg().
+				argName("HEIGHT").
+				build());
+		options.addOption(
+				Option.
+				builder("l").
+				longOpt("level").
+				desc("game start at level LEVEL").
+				hasArg().
+				argName("LEVEL").
+				build());
+		try {
+			CommandLine line = parser.parse(options, args);
+
+			if (line.hasOption("help")) {
+				HelpFormatter formatter = new HelpFormatter();
+				formatter.printHelp("TreasureHunt", options);
+				System.exit(0);
+			} else if (line.hasOption("window-width")) {
+				// TODO: must be at least 13
+				GameSettings.field_width = Integer.parseInt(line.getOptionValue("window-width"));
+				GameSettings.io_win_width = Integer.parseInt(line.getOptionValue("window-width"));
+				GameSettings.default_score_window_width = Integer.parseInt(line.getOptionValue("window-width"));
+			} else if (line.hasOption("window-height")) {
+				// TODO: must be at least 11
+				GameSettings.field_height = Integer.parseInt(line.getOptionValue("window-height"));
+			} else if (line.hasOption("level")) {
+				// TODO
+				;
+			}
+		} catch (ParseException exp) {
+			System.out.println("Unexpected exception:" + exp.getMessage());
+			HelpFormatter formatter = new HelpFormatter();
+			formatter.printHelp("TreasureHunt", options);
+			System.exit(0);
+		}
 	}
 }

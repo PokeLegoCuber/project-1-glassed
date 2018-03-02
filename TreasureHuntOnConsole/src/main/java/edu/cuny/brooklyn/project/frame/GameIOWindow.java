@@ -16,8 +16,8 @@ public class GameIOWindow {
 	private char[][] window;
 	
 	public GameIOWindow() {
-		height = GameSettings.IO_WIN_HEIGHT;
-		width = GameSettings.IO_WIN_WIDTH;
+		height = GameSettings.io_win_height;
+		width = GameSettings.io_win_width;
 		window = new char[height][width];
 		
 		clear();

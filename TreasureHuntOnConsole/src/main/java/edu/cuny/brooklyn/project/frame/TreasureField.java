@@ -22,8 +22,8 @@ public class TreasureField {
 	private Random rng;
 	
 	public TreasureField() {
-		fieldWidth = GameSettings.FIELD_WIDTH;
-		fieldHeight = GameSettings.FIELD_HEIGHT;
+		fieldWidth = GameSettings.field_width;
+		fieldHeight = GameSettings.field_height;
 		field = new char[fieldHeight][fieldWidth];
 		
 		clear();	

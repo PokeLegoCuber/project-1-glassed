@@ -1,6 +1,7 @@
 package edu.cuny.brooklyn.project.score;
 
 import edu.cuny.brooklyn.project.GameSettings;
+import edu.cuny.brooklyn.project.treasure.Treasure;
 
 public class Scorer {
 

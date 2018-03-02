@@ -6,12 +6,12 @@ public class GameSettings {
 	final static int FRAME_HEIGHT = 25;
 	
 	// default treasure field size
-	public final static int FIELD_WIDTH = 70;
-	public final static int FIELD_HEIGHT = 15;
+	public static int field_width = 70;
+	public static int field_height = 15;
 	
 	// default user I/O field size
-	public final static int IO_WIN_WIDTH = 70;
-	public final static int IO_WIN_HEIGHT = 3;
+	public static int io_win_width = 70;
+	public static int io_win_height = 3;
 	
 	public final static int FIELD_EMPTY = 0;
 	
@@ -25,8 +25,8 @@ public class GameSettings {
 	public final static int NUM_TYPES_OF_PUZZLERS = 1;
 	
 	// score window
-	public static final int DEFAULT_SCORE_WINDOW_HEIGHT = 1;
-	public static final int DEFAULT_SCORE_WINDOW_WIDTH = 70;
+	public static int default_score_window_height = 1;
+	public static int default_score_window_width = 70;
 	
 	// clue error
 	public static final int DEFAULT_CLUE_ERROR_INCREMENT = 2;

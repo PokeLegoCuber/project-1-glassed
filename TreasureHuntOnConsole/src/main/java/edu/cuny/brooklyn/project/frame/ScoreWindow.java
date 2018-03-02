@@ -8,8 +8,8 @@ public class ScoreWindow {
 	private char[][] window;
 
 	public ScoreWindow() {
-		height = GameSettings.DEFAULT_SCORE_WINDOW_HEIGHT;
-		width = GameSettings.DEFAULT_SCORE_WINDOW_WIDTH;
+		height = GameSettings.default_score_window_height;
+		width = GameSettings.default_score_window_width;
 		window = new char[width][height];
 	}
 	
