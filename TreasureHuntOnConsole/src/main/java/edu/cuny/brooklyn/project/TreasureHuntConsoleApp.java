@@ -95,12 +95,22 @@ public class TreasureHuntConsoleApp {
 				System.exit(0);
 			} else if (line.hasOption("window-width")) {
 				// TODO: must be at least 13
-				GameSettings.field_width = Integer.parseInt(line.getOptionValue("window-width"));
-				GameSettings.io_win_width = Integer.parseInt(line.getOptionValue("window-width"));
-				GameSettings.default_score_window_width = Integer.parseInt(line.getOptionValue("window-width"));
+				if(line.getOptionValue("window-width").equals("13")){
+					GameSettings.field_width = Integer.parseInt(line.getOptionValue("window-width"));
+					GameSettings.io_win_width = Integer.parseInt(line.getOptionValue("window-width"));
+					GameSettings.default_score_window_width = Integer.parseInt(line.getOptionValue("window-width"));
+				}else{
+					System.out.println("Error, the width of the window should be exact 13.");
+					System.exit(0);
+				}
 			} else if (line.hasOption("window-height")) {
 				// TODO: must be at least 11
-				GameSettings.field_height = Integer.parseInt(line.getOptionValue("window-height"));
+				if(line.getOptionValue("window-height").equals("11")){
+					GameSettings.field_height = Integer.parseInt(line.getOptionValue("window-height"));
+				}else{
+					System.out.println("Error, the height of the window should be exact 11.");
+					System.exit(0);
+				}
 			} else if (line.hasOption("level")) {
 				// TODO
 				;
@@ -113,3 +123,4 @@ public class TreasureHuntConsoleApp {
 		}
 	}
 }
+/*  check the size of the window (height and width) fixed by Junquan
