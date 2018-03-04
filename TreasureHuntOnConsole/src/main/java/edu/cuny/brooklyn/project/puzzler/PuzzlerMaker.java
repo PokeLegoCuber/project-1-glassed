@@ -22,11 +22,12 @@ public class PuzzlerMaker {
 		int type = rng.nextInt(numTypesOfPuzzler);
 		LOGGER.debug("Puzzler type = " + type);
 		Puzzler puzzler;
+		String message, answer;
 		switch(type) {
 		case PuzzlerSettings.MATH_PUZZLER: 
 			int num = 2 + rng.nextInt(10);
-			String message = "Sqrt(" + num + ") = ?";
-			String answer = Double.toString(Math.sqrt(num));
+			message = "Sqrt(" + num + ") = ?";
+			answer = Double.toString(Math.sqrt(num));
 			LOGGER.debug("Made a math puzzler: message = " + message + " and answer = " + answer);
 			puzzler = new Puzzler(message, answer, type);
 			break;
@@ -36,10 +37,11 @@ public class PuzzlerMaker {
 			double num_c = ((Math.pow(num_a,2) + Math.pow(num_b,2)));
 			num_c = Math.sqrt(num_c);
 			num_c = (int) num_c;//Converts to int but still retains the x.0 formatting
-			String message2 = "What is " + num_a + "^2 + "+ num_b + "^2 =\n Please answer to the nearest whole number";
-			String answer2 = Double.toString(num_c);
-			LOGGER.debug("Made a math puzzler: message = " + message2 + " and answer = " + answer2);
-			puzzler = new Puzzler(message2, answer2, type);
+			message = "Sqrt(" + num_a + "^2 + "+ num_b + "^2) = ?";
+			message += " (Please answer to the nearest whole number)";
+			answer = Double.toString(num_c);
+			LOGGER.debug("Made a math puzzler: message = " + message + " and answer = " + answer);
+			puzzler = new Puzzler(message, answer, type);
 			break;
 		default:
 			LOGGER.error("Unsupported puzzler type = " + type);

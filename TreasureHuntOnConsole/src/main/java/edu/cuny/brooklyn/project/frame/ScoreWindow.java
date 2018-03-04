@@ -18,7 +18,7 @@ public class ScoreWindow {
 	public void paintScore(int round, int total) {
 		clear();
 		String scoreString = "[score] round: " + round + " Total: " + total;
-		for (int i = 0; i < scoreString.length(); i++) {
+		for (int i = 0; i < scoreString.length() && i < width; i++) {
 			window[i][0] = scoreString.charAt(i);
 		}
 	}

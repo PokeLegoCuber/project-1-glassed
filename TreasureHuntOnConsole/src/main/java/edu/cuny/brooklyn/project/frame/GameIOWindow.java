@@ -70,7 +70,7 @@ public class GameIOWindow {
 		int xPos = 1;
 		int yPos = 1;
 		
-		for (int i=0; i<clue.length(); i++) {
+		for (int i=0; i<clue.length() && (xPos+i) < width; i++) {
 			window[yPos][xPos+i] = clue.charAt(i);
 		}
 		yPos ++;
@@ -100,11 +100,11 @@ public class GameIOWindow {
 		int xPos = 1;
 		int yPos = 1;
 		
-		for (int i=0; i<msg.length(); i++) {
+		for (int i = 0; i < msg.length() && (xPos+i) < width; i++) {
 			window[yPos][xPos+i] = msg.charAt(i);
 		}
 		yPos ++;
-		for (int i=0; i<"Your Answer:".length(); i++) {
+		for (int i = 0; i < "Your Answer:".length(); i++) {
 			window[yPos][xPos+i] = "Your Answer:".charAt(i);
 		}
 	}
