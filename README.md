@@ -1,6 +1,5 @@
-<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 # Treasure-Hunt-Console by Glassed
-## This is Glassed's 1st project ☺ <i class="em em-slightly_smiling_face"></i>
+## This is Glassed's 1st project 🙂
 
 This repository contains the start-up code of class projects in
 CISC 3120 Sections MW8 and MW2, Spring 2018
