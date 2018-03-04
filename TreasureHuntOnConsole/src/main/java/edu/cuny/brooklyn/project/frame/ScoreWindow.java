@@ -10,16 +10,14 @@ public class ScoreWindow {
 	public ScoreWindow() {
 		height = GameSettings.default_score_window_height;
 		width = GameSettings.default_score_window_width;
-		window = new char[width][height];
-		// TODO:
-		// in all other files it's window = new char[height][width];
+		window = new char[height][width];
 	}
 	
 	public void paintScore(int round, int total) {
 		clear();
 		String scoreString = "[score] round: " + round + " Total: " + total;
 		for (int i = 0; i < scoreString.length() && i < width; i++) {
-			window[i][0] = scoreString.charAt(i);
+			window[0][i] = scoreString.charAt(i);
 		}
 	}
 	

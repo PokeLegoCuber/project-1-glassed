@@ -64,7 +64,7 @@ public class GameFrame {
 			int y = yPosScoreWindow + i;
 			for (int j=0; j<scoreWindow.getWidth(); j++) {
 				int x = xPosScoreWindow + j;
-				displayBuffer[y][x] = scoreWindow.getCharAt(i, j);
+				displayBuffer[y][x] = scoreWindow.getCharAt(j, i);
 			}
 		}
 	}
