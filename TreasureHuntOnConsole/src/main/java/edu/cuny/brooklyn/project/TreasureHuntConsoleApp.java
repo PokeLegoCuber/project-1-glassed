@@ -30,12 +30,12 @@ public class TreasureHuntConsoleApp {
 		Scanner input= new Scanner(System.in);
 		boolean continueplay=true;
 		//Game Round & Input Validation - ACK added validated continue playing loop
+		
+		GameController controller = new GameController();
 		while(continueplay)
 		{
 	
 			LOGGER.info("TreasureHuntConsoleApp started.");
-		
-			GameController controller = new GameController();
 			controller.runTheGame();
 			System.out.println("Continue Playing Y, N?:");
 			String choice=input.next();
@@ -49,6 +49,10 @@ public class TreasureHuntConsoleApp {
 			{
 				continueplay=false;
 				System.out.println("Exiting Game...");
+			}
+			else if(choice.toUpperCase().equals("Y"))
+			{
+			;
 			}
 		}
 		input.close();

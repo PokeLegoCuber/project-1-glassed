@@ -18,15 +18,16 @@ public class GameController {
 	PuzzlerMaker puzzlerMaker = new PuzzlerMaker();
 	
 	public GameController() {
-		gameFrame = new GameFrame();
 		scorer = new Scorer();
 		puzzlerMaker = new PuzzlerMaker();
 	}
 	
 	public void runTheGame() {
 		boolean toExit = true;
+		gameFrame = new GameFrame();
+		scorer.newRound();
 		
-		gameFrame.getScoreWindow().paintScore(scorer.getRoundScore(), scorer.getTotalScore());
+		gameFrame.getScoreWindow().paintScore(scorer.getRound(), scorer.getRoundScore(), scorer.getTotalScore());
 		gameFrame.updateDisplayScoreWindow();
 		
 		do {
@@ -40,7 +41,7 @@ public class GameController {
 			attempts = locateTreasure(clue);
 			
 			scorer.updateScore(attempts);
-			gameFrame.getScoreWindow().paintScore(scorer.getRoundScore(), scorer.getTotalScore());
+			gameFrame.getScoreWindow().paintScore(scorer.getRound(), scorer.getRoundScore(), scorer.getTotalScore());
 			gameFrame.updateDisplayScoreWindow();
 			LOGGER.debug("RoundScore = " + scorer.getRoundScore() + " TotalScore = " + scorer.getTotalScore());
 			
