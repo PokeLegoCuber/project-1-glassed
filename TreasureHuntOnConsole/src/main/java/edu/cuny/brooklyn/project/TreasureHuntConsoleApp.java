@@ -94,21 +94,22 @@ public class TreasureHuntConsoleApp {
 				formatter.printHelp("TreasureHunt", options);
 				System.exit(0);
 			} else if (line.hasOption("window-width")) {
-				// TODO: must be at least 13
-				if(line.getOptionValue("window-width").equals("13")){
-					GameSettings.field_width = Integer.parseInt(line.getOptionValue("window-width"));
-					GameSettings.io_win_width = Integer.parseInt(line.getOptionValue("window-width"));
-					GameSettings.default_score_window_width = Integer.parseInt(line.getOptionValue("window-width"));
-				}else{
-					System.out.println("Error, the width of the window should be exact 13.");
+				int width = Integer.parseInt(line.getOptionValue("window-width"));
+				if(width >= 70){
+					GameSettings.field_width = width;
+					GameSettings.io_win_width = width;
+					GameSettings.default_score_window_width = width;
+				} else {
+					System.out.println("Error, the width of the window should at least 70");
 					System.exit(0);
 				}
 			} else if (line.hasOption("window-height")) {
-				// TODO: must be at least 11
-				if(line.getOptionValue("window-height").equals("11")){
-					GameSettings.field_height = Integer.parseInt(line.getOptionValue("window-height"));
-				}else{
-					System.out.println("Error, the height of the window should be exact 11.");
+				int height = Integer.parseInt(line.getOptionValue("window-height"));
+				
+				if(height >= 12){
+					GameSettings.field_height = height;
+				} else {
+					System.out.println("Error, the height of the window should be at least 12.");
 					System.exit(0);
 				}
 			} else if (line.hasOption("level")) {
