@@ -117,8 +117,14 @@ public class TreasureHuntConsoleApp {
 					System.exit(0);
 				}
 			} else if (line.hasOption("level")) {
-				// TODO
-				;
+				int level = Integer.parseInt(line.getOptionValue("level"));
+				
+				if(level >= 1 && level <= GameSettings.NUM_TYPES_OF_PUZZLERS)
+					GameSettings.starting_level = level;
+				else {
+					System.out.println("Error, no such level '" + level + "'.");
+					System.exit(0);
+				}
 			}
 		} catch (ParseException exp) {
 			System.out.println("Unexpected exception:" + exp.getMessage());

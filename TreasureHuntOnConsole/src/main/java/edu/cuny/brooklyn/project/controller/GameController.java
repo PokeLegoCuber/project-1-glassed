@@ -3,6 +3,7 @@ package edu.cuny.brooklyn.project.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import edu.cuny.brooklyn.project.GameSettings;
 import edu.cuny.brooklyn.project.frame.Coordinates;
 import edu.cuny.brooklyn.project.frame.GameFrame;
 import edu.cuny.brooklyn.project.frame.TreasureClue;
@@ -18,7 +19,7 @@ public class GameController {
 	PuzzlerMaker puzzlerMaker = new PuzzlerMaker();
 	
 	public GameController() {
-		scorer = new Scorer();
+		scorer = new Scorer(GameSettings.starting_level);
 		puzzlerMaker = new PuzzlerMaker();
 	}
 	

@@ -34,4 +34,7 @@ public class GameSettings {
 	// score computation
 	public static final int MAX_SCORE = 100;
 	public static final int SCORE_PENALTY = 10;
+	
+	public static final int ROUNDS_PER_LEVEL = 3;
+	public static int starting_level = 1;
 }

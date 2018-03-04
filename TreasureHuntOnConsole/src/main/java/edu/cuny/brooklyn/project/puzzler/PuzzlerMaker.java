@@ -5,16 +5,12 @@ import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import edu.cuny.brooklyn.project.GameSettings;
-
 public class PuzzlerMaker {
 	private final static Logger LOGGER = LoggerFactory.getLogger(PuzzlerMaker.class);
 	private Random rng;
-	private int numTypesOfPuzzler;
 	
 	public PuzzlerMaker() {
 		rng = new Random();
-		numTypesOfPuzzler = GameSettings.NUM_TYPES_OF_PUZZLERS;
 	}
 	
 

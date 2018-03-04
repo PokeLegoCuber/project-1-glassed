@@ -15,6 +15,12 @@ public class Scorer {
 		roundScore = 0;
 		round = 0;
 	}
+	
+	public Scorer(int level) {
+		totalScore = 0;
+		roundScore = 0;
+		round = (level - 1) * GameSettings.ROUNDS_PER_LEVEL;
+	}
 
 	public int getTotalScore() {
 		return totalScore;
@@ -29,7 +35,7 @@ public class Scorer {
 	}
 	
 	public int getLevel() {
-		return (round - 1) / 3 + 1;
+		return (round - 1) / GameSettings.ROUNDS_PER_LEVEL + 1;
 	}
 	
 	public void newRound() {
