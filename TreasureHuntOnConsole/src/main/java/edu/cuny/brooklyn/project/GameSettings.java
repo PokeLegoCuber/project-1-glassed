@@ -22,7 +22,7 @@ public class GameSettings {
 	public final static int DEFAULT_TREASURE_VALUE = 1;
 	
 	// number of types of puzzlers
-	public final static int NUM_TYPES_OF_PUZZLERS = 1;
+	public final static int NUM_TYPES_OF_PUZZLERS = 2;//Changed from 1 to 2
 	
 	// score window
 	public static int default_score_window_height = 1;

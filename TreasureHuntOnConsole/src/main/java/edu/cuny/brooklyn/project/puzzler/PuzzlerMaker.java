@@ -30,6 +30,16 @@ public class PuzzlerMaker {
 			LOGGER.debug("Made a math puzzler: message = " + message + " and answer = " + answer);
 			puzzler = new Puzzler(message, answer, type);
 			break;
+		case PuzzlerSettings.MATH_PUZZLER_2://This is a Pythagorean theorem puzzle
+			double num_a = 1 + rng.nextInt(10);
+			double num_b = 1 + rng.nextInt(10);
+			double num_c = ((Math.pow(num_a,2) + Math.pow(num_b,2)));
+			num_c = Math.sqrt(num_c);
+			num_c = (int) num_c;//Converts to int but still retains the x.0 formatting
+			String message2 = "What is " + num_a + "^2 + "+ num_b + "^2 =\nPlease answer to the nearest whole number";
+			String answer2 = Double.toString(num_c);
+			LOGGER.debug("Made a math puzzler: message = " + message2 + " and answer = " + answer2);
+			puzzler = new Puzzler(message2, answer2, type);
 		default:
 			LOGGER.error("Unsupported puzzler type = " + type);
 			puzzler = null;

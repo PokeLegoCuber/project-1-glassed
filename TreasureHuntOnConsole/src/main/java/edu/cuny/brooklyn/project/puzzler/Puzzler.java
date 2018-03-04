@@ -28,10 +28,24 @@ public class Puzzler {
 				LOGGER.debug("Incorrect answer");
 				return false;
 			}
+		case PuzzlerSettings.MATH_PUZZLER_2:
+			double entered2 = Double.parseDouble(enteredAnswer);
+			double expected2 = Double.parseDouble(answer);
+			if (entered2 == expected2)
+			{
+				LOGGER.debug("Correct answer");
+				return true;
+			}
+			else 
+			{
+				LOGGER.debug("Incorrect answer");
+				return false;
+			}
 		default:
 			LOGGER.error("Unsupported puzzler type = " + type);
 			return false;
 		}
+			
 	}
 	
 	public String getMessage() {
