@@ -1,6 +1,7 @@
 package edu.cuny.brooklyn.project.frame;
 
 import edu.cuny.brooklyn.project.GameSettings;
+import edu.cuny.brooklyn.project.score.Scorer;
 
 public class ScoreWindow {
 	private int width;
@@ -13,13 +14,13 @@ public class ScoreWindow {
 		window = new char[height][width];
 	}
 	
-	public void paintScore(int round, int roundscore, int totalscore) {
+	public void paintScore(Scorer score) {
 		clear();
 		String scoreString = 
-				"[round " + round + "] " +
-				"[level " + new Integer((round - 1) / 3 + 1) + "] " +
-				" Round Score: " + roundscore + 
-				" Total Score: " + totalscore;
+				"[round " + score.getRound() + "] " +
+				"[level " + score.getLevel() + "] " +
+				" Round Score: " + score.getRoundScore() + 
+				" Total Score: " + score.getTotalScore();
 		for (int i = 0; i < scoreString.length() && i < width; i++) {
 			window[0][i] = scoreString.charAt(i);
 		}

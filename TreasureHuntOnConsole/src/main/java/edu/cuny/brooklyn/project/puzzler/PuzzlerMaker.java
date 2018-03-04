@@ -18,8 +18,8 @@ public class PuzzlerMaker {
 	}
 	
 
-	public Puzzler make() {
-		int type = rng.nextInt(numTypesOfPuzzler);
+	public Puzzler make(int level) {
+		int type = level - 1;
 		LOGGER.debug("Puzzler type = " + type);
 		Puzzler puzzler;
 		String message, answer;
@@ -44,6 +44,7 @@ public class PuzzlerMaker {
 			puzzler = new Puzzler(message, answer, type);
 			break;
 		default:
+			// fixme: what should happen if player gone through all levels?
 			LOGGER.error("Unsupported puzzler type = " + type);
 			puzzler = null;
 		}

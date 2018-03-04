@@ -28,6 +28,10 @@ public class Scorer {
 		return round;
 	}
 	
+	public int getLevel() {
+		return (round - 1) / 3 + 1;
+	}
+	
 	public void newRound() {
 		roundScore = 0;
 		round += 1;

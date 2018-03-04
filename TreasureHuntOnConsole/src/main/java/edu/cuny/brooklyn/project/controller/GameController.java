@@ -27,7 +27,7 @@ public class GameController {
 		gameFrame = new GameFrame();
 		scorer.newRound();
 		
-		gameFrame.getScoreWindow().paintScore(scorer.getRound(), scorer.getRoundScore(), scorer.getTotalScore());
+		gameFrame.getScoreWindow().paintScore(scorer);
 		gameFrame.updateDisplayScoreWindow();
 		
 		do {
@@ -41,7 +41,7 @@ public class GameController {
 			attempts = locateTreasure(clue);
 			
 			scorer.updateScore(attempts);
-			gameFrame.getScoreWindow().paintScore(scorer.getRound(), scorer.getRoundScore(), scorer.getTotalScore());
+			gameFrame.getScoreWindow().paintScore(scorer);
 			gameFrame.updateDisplayScoreWindow();
 			LOGGER.debug("RoundScore = " + scorer.getRoundScore() + " TotalScore = " + scorer.getTotalScore());
 			
@@ -52,7 +52,7 @@ public class GameController {
 	private int solvePuzzler() {
 		int attempts = 0;
 		String answer = "";
-		Puzzler puzzler = puzzlerMaker.make();
+		Puzzler puzzler = puzzlerMaker.make(scorer.getLevel());
 		do {
 			gameFrame.getIoWindow().paintPuzzler(puzzler.getMessage());
 			gameFrame.updateDisplayIoWindow();
