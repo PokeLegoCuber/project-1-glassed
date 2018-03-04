@@ -123,4 +123,4 @@ public class TreasureHuntConsoleApp {
 		}
 	}
 }
-/*  check the size of the window (height and width) fixed by Junquan
+//  check the size of the window (height and width) fixed by Junquan
