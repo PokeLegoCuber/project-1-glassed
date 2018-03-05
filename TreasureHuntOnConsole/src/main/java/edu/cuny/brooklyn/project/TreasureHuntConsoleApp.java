@@ -97,7 +97,8 @@ public class TreasureHuntConsoleApp {
 				HelpFormatter formatter = new HelpFormatter();
 				formatter.printHelp("TreasureHunt", options);
 				System.exit(0);
-			} else if (line.hasOption("window-width")) {
+			}
+			if (line.hasOption("window-width")) {
 				int width = Integer.parseInt(line.getOptionValue("window-width"));
 				if(width >= 30){
 					GameSettings.field_width = width;
@@ -107,7 +108,8 @@ public class TreasureHuntConsoleApp {
 					System.out.println("Error, the width of the window should at least 30");
 					System.exit(0);
 				}
-			} else if (line.hasOption("window-height")) {
+			}
+			if (line.hasOption("window-height")) {
 				int height = Integer.parseInt(line.getOptionValue("window-height"));
 				
 				if(height >= 12){
@@ -116,7 +118,8 @@ public class TreasureHuntConsoleApp {
 					System.out.println("Error, the height of the window must be at least 12.");
 					System.exit(0);
 				}
-			} else if (line.hasOption("level")) {
+			}
+			if (line.hasOption("level")) {
 				int level = Integer.parseInt(line.getOptionValue("level"));
 				
 				if(level >= 1 && level <= GameSettings.NUM_TYPES_OF_PUZZLERS)
