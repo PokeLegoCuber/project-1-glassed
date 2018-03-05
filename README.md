@@ -4,7 +4,7 @@
 This repository contains the start-up code of class projects in
 CISC 3120 Sections MW8 and MW2, Spring 2018
 
-Website link: https://cisc3120sp18.github.io/project-1-glassed/index.html
+Website link: https://cisc3120sp18.github.io/project-1-glassed/
 
 Project 1: TreasureHuntOnConsole
 
