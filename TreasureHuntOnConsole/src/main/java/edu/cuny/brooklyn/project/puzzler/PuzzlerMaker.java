@@ -40,9 +40,12 @@ public class PuzzlerMaker {
 			puzzler = new Puzzler(message, answer, type);
 			break;
 		default:
-			// fixme: what should happen if player gone through all levels?
 			LOGGER.error("Unsupported puzzler type = " + type);
+			// HACK
 			puzzler = null;
+			System.out.println("you won!");
+			System.exit(0);
+
 		}
 		return puzzler;
 	}
