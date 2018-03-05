@@ -74,7 +74,7 @@ public class GameIOWindow {
 			window[yPos][xPos+i] = clue.charAt(i);
 		}
 		yPos ++;
-		for (int i=0; i<"Where is the treasure? enter x,y:".length(); i++) {
+		for (int i=0; i<"Where is the treasure? enter x,y:".length() && (xPos+i)<width; i++) {
 			window[yPos][xPos+i] = "Where is the treasure? enter x,y:".charAt(i);
 		}
 	}
